@@ -8,3 +8,4 @@ invoiceWriter.addRows([
     { amount: 100, buyer: 'Squirtel', article: 'Some water' }
 ]);
 invoiceWriter.save('./data/invoice.csv');
+// invoiceWriter.delete('./data/invoice.csv')

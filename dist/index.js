@@ -12,6 +12,14 @@ class CsvWriter {
         this.csv += '\n';
         // console.log('file save', filename);
     }
+    delete(filname) {
+        if ((0, fs_1.existsSync)(filname)) {
+            (0, fs_1.unlinkSync)(filname);
+        }
+        else {
+            console.log('file not found');
+        }
+    }
     formatRow(value) {
         return this.columns.map((col) => value[col]).join(',');
     }

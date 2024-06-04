@@ -1,4 +1,4 @@
-import{ appendFileSync} from 'fs'
+import{ appendFileSync, unlinkSync, existsSync} from 'fs'
 
 
 export class CsvWriter<T> {
@@ -11,6 +11,14 @@ export class CsvWriter<T> {
         appendFileSync(filename, this.csv)
         this.csv += '\n'
         // console.log('file save', filename);
+    }
+
+    delete(filname: string):void{
+        if(existsSync(filname)){
+            unlinkSync(filname)
+        }else{
+            console.log('file not found');
+        }
     }
 
     private formatRow(value: T):string{

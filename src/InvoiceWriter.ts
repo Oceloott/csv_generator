@@ -19,3 +19,5 @@ invoiceWriter.addRows([
 
 
 invoiceWriter.save('./data/invoice.csv')
+
+// invoiceWriter.delete('./data/invoice.csv')
